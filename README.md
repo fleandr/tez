@@ -14,6 +14,30 @@
 
 Apache Tez
 ==========
+ apt-get install libprotobuf-dev
+  898  apt-get install protobuf-compiler
+  899  protoc
+  900  apt-get install libprotobuf-java
+  901  apt-get install python-protobuf
+ 915  adduser
+  916  adduser fleandr
+  917  su - fleandr
+  918  cd ~/apache-ambari-2.6.0-src/phantomjs/
+  919  ls
+  920  cd ..
+  921  cp -R phantomjs/ /home/fleandr/
+  923  chown -R fleandr:fleandr /home/fleandr/phantomjs
+  924  su - fleandr
+
+ wget http://mirror.linux-ia64.org/apache/tez/0.9.0/apache-tez-0.9.0-src.tar.gz
+    2  tar -xvf apache-tez-0.9.0-src.tar.gz
+    3  cd apache-tez-0.9.0-src/
+    4  vim pom.xml
+    5  9  export PATH=$PATH:/home/fleandr/phantomjs/bin
+ 
+   12  mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true
+
+
 
 Apache Tez is a generic data-processing pipeline engine envisioned as a low-level engine for higher abstractions
 such as Apache Hadoop Map-Reduce, Apache Pig, Apache Hive etc.
